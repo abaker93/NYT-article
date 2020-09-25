@@ -12,9 +12,9 @@ h1 {
 
 h2 { font-weight: 700; }
 
-a {
-    color: #567b95;
-}
+a { color: #567b95; }
+
+strong { font-weight: 700; }
 
 button {
     background-color: #567b95;
@@ -34,6 +34,7 @@ header {
     position: sticky;
     top: 0;
     background: #FFFFFF;
+    z-index: 20;
 }
 
 header nav {
@@ -72,7 +73,7 @@ header svg {
     fill: #333333;
 }
 
-.logo svg {
+header .logo svg {
     height: 26px;
     fill: #000000;
     position: relative;
@@ -155,20 +156,25 @@ article .share {
     justify-content: center;
 }
 
-article .date-share svg {
+article .date-share svg,
+article .article-footer svg {
     height: 12px;
     position: relative;
     top: -2px;
 }
 
-article .date-share .share li { margin: 5px; }
+article .date-share .share li,
+article .article-footer li {
+    margin: 5px;
+}
 
-article .date-share .share li:first-child svg {
+article .date-share .share li:first-child svg,
+article .article-footer svg {
     height: 15px;
     top: 0;
 }
 
-article .date-share .btn-share {
+article .btn-share {
     background-color: #EEEEEE;
     border-radius: 50%;
     height: 27px;
@@ -253,6 +259,55 @@ article .ad a {
     text-decoration: none;
 }
 
+article .grid-container {
+    max-width: 945px;
+    margin: 0 auto;
+}
+
+article .grid-container h2 {
+    max-width: 100%;
+    padding-bottom: 5px;
+}
+
+article .grid-container figcaption {
+    padding-bottom: 5px;
+}
+
+article .fig-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 10px;
+}
+
+article .fig-grid .figure img { max-width: 100%; }
+
+article .fig-grid .figure p {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+article .fig-grid .figure p strong {
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-right: 5px;
+}
+
+article .grid-container .fig-byline {
+    max-width: 100%;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 13px;
+}
+
+article .grid-container .fig-byline:before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 60px;
+    background: #666666;
+    margin-bottom: 10px;
+}
+
 article .video {
     max-width: 600px;
     margin: 0 auto;
@@ -274,4 +329,153 @@ article iframe {
     right: 0;
     width: 100%;
     height: 100%;
+}
+
+article .article-footer {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 11px;
+    color: #666666;
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-items: space-between;
+}
+
+article .article-footer p { grid-column: 1 / 3; }
+
+article .article-footer a { color: #666666; }
+
+article .article-footer ul {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: right;
+}
+
+article .article-footer ul li {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+section.additional-articles {
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-column-gap: 30px;
+}
+
+section.additional-articles h3 {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    grid-column: 1 / 4;
+    border-top: 1px solid #000000;
+    padding: 20px 0 0;
+}
+
+section.additional-articles img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+section.additional-articles p.caption {
+    font-size: 10px;
+    text-align: right;
+    color: #888888;
+}
+
+section.additional-articles p.title {
+    font-size: 16px;
+}
+
+section.additional-articles p.date {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 11px;
+    color: #888888;
+}
+
+section.additional-articles section.space {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    margin-bottom: 40px;
+}
+
+section.additional-articles section.popular {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+}
+
+section.additional-articles section.popular p.title {
+    border-bottom: 1px solid #E0E0E0;
+    padding: 15px 0;
+}
+
+section.additional-articles section.popular h3 {
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 15px;
+}
+
+section.additional-articles section.editor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    position: relative;
+    padding-top: 20px;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 13px;
+}
+
+footer:before {
+    content: '';
+    box-sizing: border-box;
+    height: 5px;
+    width: 100%;
+    border-top: 2px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+    position: absolute;
+    top: 0;
+}
+
+footer h4 {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+footer .logo {
+    grid-column: 1 / 6;
+    margin-bottom: 15px;
+}
+
+footer .logo svg { height: 25px; }
+
+footer .home-link {
+    justify-self: right;
+}
+
+footer .home-link a {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+footer ul li {
+    margin-bottom: 5px;
+}
+
+footer ul li svg {
+    height: 13px;
 }
